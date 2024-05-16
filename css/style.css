@@ -1,0 +1,111 @@
+/* Global Styles */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Arial", Serif;
+  }
+  
+  .w3-bar, h1, button {
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Icon Styles */
+  .fa-anchor, .fa-coffee {
+    font-size: 200px;
+  }
+  
+  /* Color Classes */
+  .red {
+    background-color: #FF0000;
+  }
+  
+  .white {
+    color: #FFFFFF;
+  }
+  
+  .off-white {
+    background-color: #F5F5F5;
+  }
+  
+  .red-text {
+    color: #FF0000;
+  }
+  
+  /* Button Hover Effect */
+  button:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+  }
+  
+  /* Chat Container */
+  .chat-container {
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  .chat-container h1 {
+    text-align: center;
+    color: #FF0000;
+  }
+  
+  /* Chat Messages */
+  .chat-messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+  }
+  
+  /* User and Bot Messages */
+  .user-message {
+    background-color: #ffe0e0;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+  
+  .bot-message {
+    background-color: #f1f1f1;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Input Container */
+  .input-container {
+    display: flex;
+  }
+  
+  .input-container input {
+    flex-grow: 1;
+    padding: 5px;
+  }
+  
+  .input-container button {
+    padding: 5px 10px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border: none;
+  }
+  
+  /* Message Bubbles */
+  .user-message span,
+  .bot-message span {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  
+  .user-message span {
+    background-color: #FF0000;
+    color: white;
+  }
+  
+  .bot-message span {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
