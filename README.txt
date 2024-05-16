@@ -1,33 +1,38 @@
-Documentation pour le Chatbot :
 
-# Chatbot
+---
 
-## Introduction
-Ce code implémente une interface de chatbot simple en utilisant HTML, CSS et JavaScript. Le chatbot répond aux requêtes des utilisateurs avec des réponses prédéfinies stockées dans un objet JavaScript appelé `faq`.
+# Chatbot de Recommandation de Vins
 
-## Dépendances
-Le chatbot repose sur les ressources externes suivantes :
-- Font Awesome (Version 5.15.3) : Utilisé pour afficher des icônes dans l'interface du chatbot.
-- Google Fonts : Deux polices sont utilisées dans ce chatbot, à savoir Lato et Montserrat.
-- W3.css (Version 4) : Fournit une mise en forme de base pour l'interface du chatbot.
+## Description
+Ce chatbot interactif fournit des recommandations de vins personnalisées pour accompagner une variété de plats. Utilisant un dictionnaire de réponses prédéfinies basé sur des accords mets-vins classiques, il répond aux requêtes des utilisateurs concernant le meilleur vin à servir avec des plats spécifiques comme le foie gras, les huîtres, le saumon fumé, et bien d'autres.
 
-## Utilisation
-Pour utiliser le chatbot, suivez ces étapes :
-1. Inclure le code HTML, CSS et JavaScript nécessaires dans votre page Web.
-2. L'interface du chatbot se compose d'un conteneur de messages, où la conversation est affichée, et d'un champ de saisie pour envoyer des requêtes au chatbot.
-3. Les utilisateurs peuvent saisir des questions ou des requêtes dans le champ de saisie et cliquer sur le bouton "Envoyer" pour interagir avec le chatbot.
-4. Le chatbot répond aux requêtes avec des réponses prédéfinies trouvées dans l'objet `faq`. S'il ne comprend pas une requête, il répond par "Désolé, je ne comprends pas."
+## Fonctionnalités
+- **Interaction Utilisateur** : Les utilisateurs peuvent saisir le nom d'un plat pour recevoir une recommandation de vin appropriée.
+- **Réponses Prédéfinies** : Le chatbot dispose d'un dictionnaire intégré qui inclut des réponses pour des plats communs.
+- **Interface Intuitive** : L'interface utilisateur est simple et facile à utiliser, permettant une interaction rapide et directe.
+- **Recherche par Mot-Clé** : Le chatbot recherche dans les entrées des utilisateurs des mots-clés correspondant aux plats connus pour fournir la réponse la plus pertinente.
 
-## Style
-L'interface du chatbot est stylée à l'aide de CSS. Les messages du chat sont affichés dans des couleurs alternées pour les messages de l'utilisateur et du chatbot, les messages de l'utilisateur étant alignés à droite et ceux du chatbot étant alignés à gauche.
+## Technologies Utilisées
+- **HTML** : Structure de base de l'interface utilisateur.
+- **CSS** : Mise en forme et design de l'interface.
+- **JavaScript** : Logique de fonctionnement du chatbot, gestion des événements et manipulation du DOM.
 
-Le conteneur du chat est stylé avec un fond bleu et une couleur de texte dorée, ce qui lui donne un aspect attrayant.
+## Comment Ça Marche
+1. **Saisie Utilisateur** : L'utilisateur entre une question ou un nom de plat dans le champ de saisie.
+2. **Traitement de la Requête** : Le script analyse la saisie pour détecter la présence de mots-clés associés aux plats dans la base de données du chatbot.
+3. **Affichage de la Réponse** : Le chatbot affiche la recommandation de vin appropriée ou une invite à reformuler la question si aucun mot-clé pertinent n'est détecté.
 
-## Fonctionnalité JavaScript
-La fonctionnalité du chatbot est implémentée en utilisant JavaScript. Lorsqu'un utilisateur envoie une requête, la fonction `sendMessage()` est appelée.
+## Exemple d'Utilisation
+- Utilisateur : "Quel vin pour accompagner du saumon fumé ?"
+- Chatbot : "Avec du saumon fumé, un Chablis (vin blanc sec) fera des merveilles. Un régal pour les papilles !"
 
-### Structure des données
-Les réponses du chatbot sont stockées dans un objet JavaScript nommé `faq`, où la clé représente l'entrée de l'utilisateur (question/requête) et la valeur représente la réponse du chatbot.
+## Installation
+Aucune installation particulière n'est nécessaire. Le chatbot fonctionne dans tout navigateur web moderne. Pour le mettre en place sur votre serveur ou site web local :
+1. Téléchargez les fichiers du projet.
+2. Ouvrez `index.html` dans votre navigateur pour lancer le chatbot.
 
-### sendMessage()
-Cette fonction est responsable de la gestion de la saisie de l'utilisateur, de l'affichage du message de l'utilisateur dans le chat, de la recherche de la réponse appropriée dans l'objet `faq`, de l'affichage de la réponse du chatbot et de la mise à jour de l'interface du chat.
+## Contribution
+Les contributions sont les bienvenues. Si vous souhaitez améliorer le chatbot ou étendre sa base de données de réponses, veuillez cloner ce dépôt, apporter vos modifications et soumettre une pull request.
+
+## Licence
+Ce projet est distribué sous licence MIT, autorisant une large utilisation, modification, et distribution.
