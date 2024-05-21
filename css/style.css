@@ -1,111 +1,183 @@
 /* Global Styles */
 body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Arial", Serif;
-  }
-  
-  .w3-bar, h1, button {
-    font-family: "Arial", sans-serif;
-  }
-  
-  /* Icon Styles */
-  .fa-anchor, .fa-coffee {
-    font-size: 200px;
-  }
-  
-  /* Color Classes */
-  .red {
-    background-color: #FF0000;
-  }
-  
-  .white {
-    color: #FFFFFF;
-  }
-  
-  .off-white {
-    background-color: #F5F5F5;
-  }
-  
-  .red-text {
-    color: #FF0000;
-  }
-  
-  /* Button Hover Effect */
-  button:hover {
-    background-color: #FF0000;
-    color: #FFFFFF;
-  }
-  
-  /* Chat Container */
-  .chat-container {
-    width: 400px;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #F5F5F5;
-  }
-  
-  .chat-container h1 {
-    text-align: center;
-    color: #FF0000;
-  }
-  
-  /* Chat Messages */
-  .chat-messages {
-    height: 300px;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-  }
-  
-  /* User and Bot Messages */
-  .user-message {
-    background-color: #ffe0e0;
-    padding: 5px;
-    margin-bottom: 5px;
-    text-align: right;
-  }
-  
-  .bot-message {
-    background-color: #f1f1f1;
-    padding: 5px;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-  
-  /* Input Container */
-  .input-container {
-    display: flex;
-  }
-  
-  .input-container input {
-    flex-grow: 1;
-    padding: 5px;
-  }
-  
-  .input-container button {
-    padding: 5px 10px;
-    background-color: #FF0000;
-    color: #FFFFFF;
-    border: none;
-  }
-  
-  /* Message Bubbles */
-  .user-message span,
-  .bot-message span {
-    display: inline-block;
-    border-radius: 8px;
-    padding: 8px;
-  }
-  
-  .user-message span {
-    background-color: #FF0000;
-    color: white;
-  }
-  
-  .bot-message span {
-    background-color: #f1f1f1;
-    color: #333;
-  }
-  
+  font-family: "Arial", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.w3-bar, h1, button {
+  font-family: "Arial", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Icon Styles */
+.fa-anchor, .fa-coffee {
+  font-size: 200px;
+}
+
+/* Color Classes */
+.red {
+  background-color: #FF0000;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.off-white {
+  background-color: #F5F5F5;
+}
+
+.red-text {
+  color: #FF0000;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container h1 {
+  text-align: center;
+  color: #FF0000;
+  margin-bottom: 20px;
+}
+
+/* Chat Messages */
+.chat-messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.user-message, .bot-message {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 80%;
+}
+
+.user-message {
+  background-color: #ffe0e0;
+  text-align: right;
+  margin-left: auto;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-container input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Message Bubbles */
+.user-message span,
+.bot-message span {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.user-message span {
+  background-color: #FF0000;
+  color: white;
+}
+
+.bot-message span {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+/* Content Container */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.chat-container {
+  flex: 1;
+}
+
+.menu-card {
+  width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.menu-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+.menu-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-card li {
+  margin-bottom: 10px;
+}
+
+.menu-card a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+}
+
+.menu-card a:hover {
+  background-color: #f0f0f0;
+}
