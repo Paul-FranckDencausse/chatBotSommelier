@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap">
-
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="w3-top">
-    <div class="w3-bar red w3-card w3-left-align w3-large" style="padding-left: 25%; padding-right: 25%;">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large red" 
+    <div class="w3-bar w3-blue w3-card w3-left-align w3-large" style="padding-left: 25%; padding-right: 25%;">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large w3-white" 
          href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large white">Mon sommelier</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large white">Accueil</a>
       <div class="w3-dropdown-hover w3-right">
         <button class="w3-bar-item w3-button w3-hide-small w3-padding-large white">Langue du site</button>
-        <div class="w3-dropdown-content w3-bar-block w3-card red">
+        <div class="w3-dropdown-content w3-bar-block w3-card w3-blue">
           <a href="#" class="w3-bar-item w3-button white">Français</a>
           <a href="#" class="w3-bar-item w3-button white">English</a>
           <a href="#" class="w3-bar-item w3-button white">Español</a>
@@ -34,10 +34,10 @@
     </div>
   </div>
 
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large w3-right">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Mon sommelier</a>
     <button class="w3-bar-item w3-button w3-hide-small w3-padding-large white">Langue du site</button>
-    <div class="w3-dropdown-content w3-bar-block w3-card red">
+    <div class="w3-dropdown-content w3-bar-block w3-card w3-blue">
       <a href="#" class="w3-bar-item w3-button white">Français</a>
       <a href="#" class="w3-bar-item w3-button white">English</a>
       <a href="#" class="w3-bar-item w3-button white">Español</a>
@@ -48,16 +48,16 @@
   <br>
   <div class="content-container">
     <div class="chat-container">
-      <h1 class="red-text">Mon sommelier</h1>
+      <h1 class="w3-text-blue">Mon sommelier</h1>
       <div class="chat-messages" id="chat-messages"></div>
       <div class="input-container">
         <input type="text" id="user-input" placeholder="Posez une question...">
-        <button onclick="sendMessage()">Envoyer</button>
+        <button onclick="sendMessage()" class="w3-button w3-blue">Envoyer</button>
       </div>
     </div>
-    <div class="menu-card">
-      <h2>Accords Mets et Vins</h2>
-      <p>Vous pouvez demander des suggestions pour les accords suivants :</p>
+    <div class="menu-card w3-hide-small">
+      <h2>Besoin d'aide?</h2>
+      <p>Vous pouvez tester avec :</p>
       <ul>
         <li><a href="#">Foie gras</a></li>
         <li><a href="#">Huîtres</a></li>
@@ -74,6 +74,26 @@
       </ul>
     </div>
   </div>
+  <div class="menu-card w3-hide-large w3-hide-medium">
+    <h2>Besoin d'aide?</h2>
+    <p>Vous pouvez tester avec :</p>
+    <ul>
+      <li><a href="#">Foie gras</a></li>
+      <li><a href="#">Huîtres</a></li>
+      <li><a href="#">Saumon fumé</a></li>
+      <li><a href="#">Coq au vin</a></li>
+      <li><a href="#">Boeuf bourguignon</a></li>
+      <li><a href="#">Cassoulet</a></li>
+      <li><a href="#">Ratatouille</a></li>
+      <li><a href="#">Bouillabaisse</a></li>
+      <li><a href="#">Magret de canard</a></li>
+      <li><a href="#">Choucroute</a></li>
+      <li><a href="#">Fromages</a></li>
+      <li><a href="#">Tarte Tatin</a></li>
+    </ul>
+  </div>
+</div>
+  
   <script src="js/script.js"></script>
 </body>
 </html>
