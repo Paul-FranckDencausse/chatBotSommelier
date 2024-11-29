@@ -1,59 +1,88 @@
-var faq = {
-    "foie gras": "Le foie gras est délicieux avec un verre de Sauternes (vin blanc moelleux). Vous allez adorer cette combinaison !",
-    "huîtres": "Pour accompagner des huîtres, je recommande un Muscadet (vin blanc sec). C'est un accord classique et savoureux.",
-    "saumon fumé": "Avec du saumon fumé, un Chablis (vin blanc sec) fera des merveilles. Un régal pour les papilles !",
-    "coq au vin": "Le coq au vin se marie parfaitement avec un Bourgogne rouge (Pinot Noir). Profitez de ce classique français !",
-    "boeuf bourguignon": "Pour un boeuf bourguignon, optez pour un Côte de Nuits (vin rouge de Bourgogne). Un vrai délice !",
-    "cassoulet": "Un cassoulet se déguste idéalement avec un Cahors (Malbec). Un mariage riche en saveurs !",
-    "ratatouille": "La ratatouille est parfaite avec un Côtes de Provence rosé. Un accord frais et estival !",
-    "bouillabaisse": "Pour une bouillabaisse, un Cassis (vin blanc sec) est un choix excellent. Une harmonie parfaite !",
-    "magret de canard": "Avec du magret de canard, je vous conseille un Madiran (vin rouge tannique). Un accord robuste et savoureux !",
-    "choucroute": "La choucroute se marie bien avec un Riesling (vin blanc d'Alsace). Un duo classique et délicieux !",
-    "fromages": "Pour les fromages, un Bordeaux rouge (Cabernet Sauvignon, Merlot) est parfait. Pour le Roquefort, essayez un Sauternes.",
-    "tarte tatin": "La tarte Tatin est délicieuse avec un cidre brut ou un vin de dessert comme le Coteaux du Layon. Un vrai délice sucré !"
-  };
+// Données des accords mets et vins
+const data = [
+  { plat: "foie gras", vin: "Sauternes" },
+  { plat: "huîtres", vin: "Muscadet" },
+  { plat: "saumon fumé", vin: "Chablis" },
+  { plat: "escargots", vin: "Bourgogne Aligoté" },
+  { plat: "rillettes", vin: "Chinon" },
+  { plat: "coq au vin", vin: "Bourgogne Pinot Noir" },
+  { plat: "boeuf bourguignon", vin: "Côte de Nuits" },
+  { plat: "cassoulet", vin: "Cahors" },
+  { plat: "ratatouille", vin: "Côtes de Provence rosé" },
+  { plat: "bouillabaisse", vin: "Cassis" },
+  { plat: "magret de canard", vin: "Madiran" },
+  { plat: "choucroute", vin: "Riesling" },
+  { plat: "filet mignon", vin: "Saint-Émilion" },
+  { plat: "poulet rôti", vin: "Bourgogne blanc" },
+  { plat: "curry", vin: "Gewurztraminer" },
+  { plat: "sushis", vin: "Sauvignon Blanc" },
+  { plat: "fromages", vin: "Bordeaux rouge" },
+  { plat: "chèvre", vin: "Sancerre" },
+  { plat: "brie", vin: "Chardonnay" },
+  { plat: "camembert", vin: "Cidre brut" },
+  { plat: "roquefort", vin: "Sauternes" },
+  { plat: "comté", vin: "Vin jaune du Jura" },
+  { plat: "tarte tatin", vin: "Cidre brut" },
+  { plat: "chocolat", vin: "Banyuls" },
+  { plat: "mousse au chocolat", vin: "Maury" },
+  { plat: "crème brûlée", vin: "Monbazillac" },
+  { plat: "tiramisu", vin: "Marsala" },
+  { plat: "café gourmand", vin: "Rivesaltes" },
+  { plat: "pizza", vin: "Chianti" },
+  { plat: "barbecue", vin: "Syrah" },
+  { plat: "saucisses", vin: "Côtes-du-Rhône" },
+  { plat: "salade niçoise", vin: "Côtes de Provence rosé" },
+  { plat: "lasagnes", vin: "Chianti" }
+];
+
+// Configuration de Fuse.js
+const options = {
+  keys: ['plat'],  // Cherche uniquement sur le champ 'plat'
+  threshold: 0.4   // Niveau de "tolérance" pour la correspondance floue
+};
+
+// Initialisation de Fuse
+const fuse = new Fuse(data, options);
+
+// Fonction de recherche
+function rechercherPlat() {
+  const userInput = document.getElementById("user-input").value;
+  const resultats = fuse.search(userInput);
   
-  function sendMessage() {
-    var userInput = document.getElementById("user-input").value.toLowerCase();
-    var chatMessages = document.getElementById("chat-messages");
-    
-    // Afficher la question de l'utilisateur
-    var userMessage = document.createElement("div");
-    userMessage.classList.add("user-message");
-    var userMessageContent = document.createElement("span");
-    userMessageContent.textContent = userInput;
-    userMessage.appendChild(userMessageContent);
-    chatMessages.appendChild(userMessage);
+  let reponse = "Aucun accord trouvé.";
   
-    // Rechercher les mots-clés dans la phrase de l'utilisateur
-    var answer = "Désolé, je ne comprends pas. Pourriez-vous reformuler ?";
-    for (var key in faq) {
-      if (userInput.includes(key)) {
-        answer = faq[key];
-        break;
-      }
-    }
-  
-    // Afficher la réponse
-    var botMessage = document.createElement("div");
-    botMessage.classList.add("bot-message");
-    var botMessageContent = document.createElement("span");
-    botMessageContent.innerHTML = answer;
-    botMessage.appendChild(botMessageContent);
-    chatMessages.appendChild(botMessage);
-  
-    // Effacer l'entrée utilisateur
-    document.getElementById("user-input").value = "";
-  
-    // Défiler vers le bas pour afficher la dernière réponse
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+  if (resultats.length > 0) {
+    const vinRecommande = resultats[0].item.vin;
+    reponse = `Je vous recommande un ${vinRecommande} avec votre ${resultats[0].item.plat}.`;
   }
   
-  // Ajout de l'événement pour la touche "Entrée"
-  document.getElementById("user-input").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Évite d'ajouter une nouvelle ligne dans l'input
-      sendMessage();
-    }
-  });
-  
+  afficherMessageUtilisateur(userInput);
+  afficherMessageBot(reponse);
+}
+
+// Affiche le message de l'utilisateur
+function afficherMessageUtilisateur(message) {
+  const chatMessages = document.getElementById("chat-messages");
+  const userMessage = document.createElement("div");
+  userMessage.classList.add("user-message");
+  userMessage.innerHTML = `<span>${message}</span>`;
+  chatMessages.appendChild(userMessage);
+}
+
+// Affiche la réponse du bot
+function afficherMessageBot(message) {
+  const chatMessages = document.getElementById("chat-messages");
+  const botMessage = document.createElement("div");
+  botMessage.classList.add("bot-message");
+  botMessage.innerHTML = `<span>${message}</span>`;
+  chatMessages.appendChild(botMessage);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Remplacer la fonction sendMessage()
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    rechercherPlat();
+  }
+});
